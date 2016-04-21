@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.junit;bundle-version="4.10.0",
  com.google.guava;bundle-version="10.0.1",
  org.eclipse.xtend.lib,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.examples;bundle-version="2.7.3"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
