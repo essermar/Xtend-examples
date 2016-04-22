@@ -1,0 +1,2 @@
+* Demonstrate using xtend-annotations-example[-client]
+* Files.write(Paths.get("/Users/esser/test.txt"), #["hello"], Charset.forName("UTF-8"))
