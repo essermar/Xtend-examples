@@ -21,6 +21,6 @@ class StaticAccess {
 
 		// nested class
 		assertEquals("innerResult", new ContainerClassWithStaticMembers.TheInnerClass().result)
-		assertEquals("innerResult", new ContainerClassWithStaticMembers.TheInnerClass().result)
+		assertEquals("innerResult", new ContainerClassWithStaticMembers$TheInnerClass().result)
 	}
 }

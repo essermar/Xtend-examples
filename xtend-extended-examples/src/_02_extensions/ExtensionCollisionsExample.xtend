@@ -2,8 +2,8 @@ package _02_extensions
 
 import java.math.BigDecimal
 
-//import static extension _01_basics.extensions.StaticExtension2.*
-//import static extension _01_basics.extensions.StaticExtension1.*
+//import static extension _02_extensions.StaticExtension2.*
+//import static extension _02_extensions.StaticExtension1.*
 import org.junit.Test
 import static org.junit.Assert.*
 

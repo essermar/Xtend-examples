@@ -39,6 +39,7 @@ class RichStringExample1 {
 				«ENDFOR»
 		«ENDFOR»
 		And there is a footer.
+		And another one.
 	'''
 
 	def divisibleBy(int i1, int i2) {

@@ -9,13 +9,12 @@ import static extension java.lang.Integer.*
 /* Lambda: "anonymous" method.
  * technically: instance of an anonymous type implementing a one-method interface (Function/Procedure)
  * or extending an abstract class with one anonymous method.
- * Very useful when working with iterables :-) 
- * Closure: "lambda that closes over its environment"; i.e.: needs values from its environment. */
+ * Closure: "lambda that closes over its environment"; i.e.: needs values from its environment.
+ * Very useful when working with iterables :-) */
 class LambdaExample {
 
 	// lambda
 	val (String,String) => String myStringLambda = [String str, String str2 | str+str2]
-	// closure
 	
 	// silly closure
 	var i = 99
