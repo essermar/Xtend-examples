@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.example.dsl.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.xtext.example.greet.dsl.ui.solution;singleton:=true
+Bundle-SymbolicName: org.xtext.example.greet.dsl.solution.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.example.greet.dsl.solution;visibility:=reexport,
  org.eclipse.xtext.ui,

@@ -7,7 +7,8 @@ Model returns Model:
 	{Model}
 	'Persons:' allPersons+=Person (',' allPersons+=Person)* '.'
 	greetings+=Greeting*
-	expression+=Expression;
+//	expression+=Expression
+	;
 
 Greeting returns Greeting:
 	'Hello' (persons+=[Person|ID]) (cordially?='!' | (',' persons+=[Person])* '.');
@@ -15,12 +16,12 @@ Greeting returns Greeting:
 Person returns Person:
 	name=ID;
 
-Expression returns Expression:
-	Atomic ( {Plus.left=current} '+' right=Expression)?;
-
-Atomic returns Expression:
-	{IntValue} value=INT |
-	{StringValue} value=STRING;
+//Expression returns Expression:
+//	Atomic ( {Plus.left=current} '+' right=Expression)?;
+//
+//Atomic returns Expression:
+//	{IntValue} value=INT |
+//	{StringValue} value=STRING;
 
 terminal ID:
 	'^'? ('a'..'z' | 'A'..'Z' | 'ä' | 'ö' | 'ü' | 'Ä' | 'Ö' | 'Ü' | 'ß' | '_') ('a'..'z' | 'A'..'Z' | 'ä' | 'ö' | 'ü' |

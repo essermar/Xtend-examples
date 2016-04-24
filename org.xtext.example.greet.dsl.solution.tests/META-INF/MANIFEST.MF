@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.example.dsl.tests
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.xtext.example.greet.dsl.tests.solution;singleton:=true
+Bundle-SymbolicName: org.xtext.example.greet.dsl.solution.tests;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.example.greet.dsl.solution,
- org.xtext.example.greet.dsl.ui.solution,
+ org.xtext.example.greet.dsl.solution.ui,
  org.eclipse.core.runtime,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,

@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/xtext/example/dsl/GreetDSL.xtext"
 var fileExtensions = "greet"
-var projectName = "org.xtext.example.dsl"
+var projectName = "org.xtext.example.greet.dsl.solution"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 var encoding = "UTF-8"
