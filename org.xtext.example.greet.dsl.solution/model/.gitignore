@@ -1,0 +1,5 @@
+# Ignore everything
+/generated
+
+# Except this file
+!.gitignore

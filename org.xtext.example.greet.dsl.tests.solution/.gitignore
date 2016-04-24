@@ -1,0 +1,7 @@
+# Ignore everything
+/bin
+/target
+plugin.xml_gen
+
+# Except this file
+!.gitignore
