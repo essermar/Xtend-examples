@@ -1,2 +1,2 @@
-* Demonstrate using xtend-annotations-example[-client]
-* Files.write(Paths.get("/Users/esser/test.txt"), #["hello"], Charset.forName("UTF-8"))
+* Demonstrate using xtend-annotations-example[-client].
+* Use: Files.write(Paths.get("${home}/test.txt"), #["hello"], Charset.forName("UTF-8")) to hint at possibilities during transpilation.
