@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-package _01_basics._01_hello
+package _01_helloworld
 
 class HelloWorld {
 	def static void main(String[] args) {

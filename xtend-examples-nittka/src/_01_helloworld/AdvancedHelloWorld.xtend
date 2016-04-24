@@ -1,4 +1,4 @@
-package _01_basics._01_hello
+package _01_helloworld
 
 // imports work as in Java
 import org.junit.Test

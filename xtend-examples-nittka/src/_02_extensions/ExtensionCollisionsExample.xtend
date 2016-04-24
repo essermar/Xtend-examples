@@ -1,4 +1,4 @@
-package _01_basics._02_extensions
+package _02_extensions
 
 import java.math.BigDecimal
 

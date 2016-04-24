@@ -1,4 +1,4 @@
-package _01_basics.util;
+package util;
 
 /**
  * Dummy class for illustrating static access in Xtend

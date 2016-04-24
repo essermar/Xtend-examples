@@ -1,10 +1,10 @@
-package _01_basics._02_extensions
+package _02_extensions
 
 import org.junit.Test
 import java.math.BigDecimal
 
 import static org.junit.Assert.*
-import static extension _01_basics.util.ContainerClassWithStaticMembers.isTheEmptyString;
+import static extension util.ContainerClassWithStaticMembers.isTheEmptyString;
 
 /*
  * Extension methods allow to add new methods to existing types without modifying them.

@@ -1,7 +1,7 @@
-package _01_basics._01_hello
+package _01_helloworld
 
 import org.junit.Test
-import _01_basics.util.ContainerClassWithStaticMembers
+import util.ContainerClassWithStaticMembers
 import static org.junit.Assert.*
 
 class StaticAccess {

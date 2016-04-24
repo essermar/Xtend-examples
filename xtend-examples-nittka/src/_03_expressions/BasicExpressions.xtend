@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
 /* Taken from the official xtend-examples. Modified and extended. */
-package _02_expressions
+package _03_expressions
 
 import org.junit.Test
 import static org.junit.Assert.*
