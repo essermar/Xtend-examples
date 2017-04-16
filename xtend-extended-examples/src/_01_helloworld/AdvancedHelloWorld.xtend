@@ -1,66 +1,87 @@
 package _01_helloworld
 
-// imports work as in Java
+// Imports work as in Java
 import org.junit.Test
+
 import static org.junit.Assert.*
 
-// access modifiers implicitly 'public'. 
-// default methods possible when transpiling to Java8
+/*  Multiple type definitions per file possible.
+ *  Default access modifier for types and methods is 'public'.
+ *  Default access modifier for fields is 'private' (later).
+ */
 interface Greeter {
 	def String sayHello()
+
+	/* Default methods possible when transpiling to Java8.
+	 * Will cause syntax error for versions < 1.8.
+	 */
+	def String sayHelloWorld() {
+		println("Hello, world!");
+	}
+
 }
 
-// could also inherit from java class/ implement java interface
+/* For type definitions, same rules apply as in Java.
+ * Could also inherit from java class/ implement java interface; e.g: java.io.Serializable.
+ */
 class AdvancedHelloWorld extends HelloWorld implements Greeter {
 
-	// private field (use val to make it final)
-	// Short form for: 
-	// private var String name
+	/* Private mutable field. Short form is: */
+//	 private var String name; 
+	/* Use 'val' to make it final:  */
+//	 val String name
 	String name
 
-	// public no-args constructor
+	/*  Public no-args constructor.
+	 *  Java-like syntax would yield regular method: */
+	// def AdvancedHelloWorld() { }
 	new() {
 	}
 
-	// public constructor
 	new(String name) {
 		this.name = name
 	}
 
-	// inferred return type is String, because println returns arg
+	/* Inferred return type is String because println returns its argument.
+	 * 'override' is mandatory. Unlike '@Override' annotation in Java.
+	 */
 	override sayHello() {
 		println('Hello, ' + name + '!')
 	}
 
-	// inferred return type is String
+	/* Inferred return type is String */
 	def getName() {
-
-		// no return statement necessary
-		// evaluation result of the methods last expression becomes return value
+		/* No return statement necessary. Everything is an expression ;-)
+		 * Evaluation result of the method's last expression becomes return value.
+		 * Return type is inferred from this value.
+		 */
 		name
 	}
 
-	// inferred return type would be String
+	/* Sometimes, it is necessary to specify an explicit return type.
+	 * Here, the inferred return type would be String
+	 * Method params are implicitly 'final'.
+	 */
 	def void setName(String newName) {
 		name = newName
 	}
-	
 }
 
 class AdvancedHelloWorldTest {
 
 	@Test
 	def testGreeting() {
-
-		// immutable, use var for mutable version
-		// inferred Type is AdvancedHelloWorld, not Greeter
+		/*  Immutable, use var for mutable version
+		 *  What is the inferred type here?
+		 */
 		val greeter = new AdvancedHelloWorld()
-
-		// property-like use of setter (method-call without prefix 'set')
+		// Property-like use of setter (assignment instead of setter call)
 		greeter.name = 'Martin'
-		// property-like use of getter (method-call without prefix 'get') 
+		// Property-like use of getter (method-call without prefix 'get') 
 		assertEquals('Martin', greeter.name)
-		// empty parentheses are optional
+		// Empty parentheses are optional!
 		assertEquals('Hello, Martin!', greeter.sayHello)
+		// Check inherited interface default method (Java8 feature)
+		assertEquals("Hello, world!", greeter.sayHelloWorld())
 	}
 }

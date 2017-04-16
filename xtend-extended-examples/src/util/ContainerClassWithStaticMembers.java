@@ -1,12 +1,14 @@
 package util;
 
 /**
+ * This is JAVA :-)
  * Dummy class for illustrating static access in Xtend
- * */
+ */
 public class ContainerClassWithStaticMembers {
 
+	public static final String STRING_CONSTANT = "This is a constant.";
+
 	public static final ContainerClassWithStaticMembers INSTANCE = new ContainerClassWithStaticMembers();
-	public static final String CONSTANT = "This is a constant.";
 
 	public static boolean isStaticMethod() {
 		return true;

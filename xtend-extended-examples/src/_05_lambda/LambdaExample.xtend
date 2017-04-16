@@ -1,5 +1,7 @@
 package _05_lambda
 
+import java.util.stream.Collectors
+import java.util.stream.Stream
 import org.junit.Test
 
 import static org.junit.Assert.*
@@ -7,23 +9,27 @@ import static org.junit.Assert.*
 import static extension java.lang.Integer.*
 
 /* Lambda: "anonymous" method.
- * technically: instance of an anonymous type implementing a one-method interface (Function/Procedure)
- * or extending an abstract class with one anonymous method.
+ * Technically: instance of an anonymous type implementing a known interface with one abstract method 
+ * (Function/Procedure) or extending an existing abstract class that has one abstract method.
+ * 
  * Closure: "lambda that closes over its environment"; i.e.: needs values from its environment.
- * Very useful when working with iterables :-) */
-class LambdaExample {
+ * Very useful when working with iterables :-) 
+ * 
+ * Compiled to Java8 lambdas or anonymous classes depending on transpiler settings.
+ * Xtend is fully compatible with Java8's streams API. */
+
+class LambdaExample { 
 
 	// lambda
-	val (String,String) => String myStringLambda = [String str, String str2 | str+str2]
-	
-	// silly closure
+	val Functions.Function2<String,String,String> myStringLambda = [String str, String str2 | str+str2]
+
+	// silly closure with shorthand syntax for function types
 	var i = 99
-	val (String,String) => String myStringClosure = [String str, String str2 | str+str2+i]
+	val (String, String) => String myStringClosure = [String str, String str2 | str+str2+i]
+
 
 	val exampleObjects = newArrayList("4", 3, true, "9")
-
 	def void doSomething(Object object) {}
-
 	def void illustrateEquivalentNotations() {
 
 		// classic java-like version of a for each loop
@@ -83,7 +89,7 @@ class LambdaExample {
 	@Test
 	def void lambdaExample2() {
 		assertArrayEquals(#[5, 8, 11], (1 .. 3).map[it * 3 + 2])
-		assertEquals(3, exampleObjects.filter(Number).get(0))
+		assertEquals(3, exampleObjects.filter(Number).get(0)) 
 		assertFalse((1 .. 10).exists[it > 10])
 		assertTrue((1 .. 10).forall[it < 11])
 		assertEquals(6, (1 .. 10).findFirst[it > 5].intValue)
@@ -97,8 +103,7 @@ class LambdaExample {
 		assertEquals("1, 2, 3, 4, 5", (1 .. 10).take(5).join(', '))
 		assertEquals("6, 7, 8, 9, 10", (1 .. 10).drop(5).join(', '))
 
-		// note that a 'Procedure' used in a lambda may be non-trivial
-		// mapped to a one-method interface with possibly complex method body
+		// Procedure used as a lambda may be quite complex 
 		exampleObjects.forEach [
 			var x = 13
 			for (y : 1 .. x) {
@@ -113,9 +118,10 @@ class LambdaExample {
 	@Test
 	def void lambdaExample3() {
 
-		//you can overdo it
-		//TODO rewrite using properly named extension methods
-		val result = (10 .. 1).map[toString].sortBy[it].fold(0)[i1, String s2|i1 + println(s2).parseInt]
+		// Do not exaggerate it!
+		// TODO: Rewrite using properly named extension methods
+		val result = (10 .. 1).map[toString].sortBy[it]
+		.fold(0)[i1, String s2|i1 + println(s2).parseInt]
 		assertEquals(55, result)
 		
 //		val integerStrings = (10..1).map[toString]

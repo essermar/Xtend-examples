@@ -17,9 +17,10 @@ class RichStringExample1 {
 	/* 
 	 * Template expressions for printing large amounts of structured text.
 	 * Great for M2T or simply as a replacement for 'String.format(...)' in Java.
-	 * Richstring: Multiline text (including grey space) + template expressions «» (with white space).
-	 * Replaces XPand: No easy separation of template code formatting and printout formatting possible.
-	 * In Xtend2: All grey sections get printed exactly as they appear in the code starting
+	 * 
+	 * RichString: Multiline text (including grey space) + template expressions «» (with white space).
+	 * Allows separating template code formatting from printout formatting. 
+	 * All grey sections get printed exactly as they appear in the code starting
 	 * from the target documents left border.
 	 */
 	def createRichString() '''

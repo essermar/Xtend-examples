@@ -1,2 +1,5 @@
-* Demonstrate using xtend-annotations-example[-client].
-* Use: Files.write(Paths.get("${home}/test.txt"), #["hello"], Charset.forName("UTF-8")) to hint at possibilities during transpilation.
+There is usually not enough time for this. Basics of Xtext should be clear before explaining active annotations in depth.
+Explain role of Xbase for Xtend and what Xtend adds to Xbase (class-related concepts, RichStrings etc.)
+Explain how Xbase and Xbase-to-Java-compilation work (Common Java Type Model), and how Xtend extends this process.
+Demonstrate using Observable-example from xtend-annotations-example[-client] project.
+It is distributed with Xtend (New > Example... > Xtend Active Annotation Example).

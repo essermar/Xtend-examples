@@ -8,8 +8,10 @@ import static org.junit.Assert.*
 class SwitchExample {
 
 	def String doSwitch(Object o) {
-		// the first!! match wins
-		// note the possible combination of type guard and case expression
+		/* Remember: the first(!) match wins.
+		 * Case condition: Either an explicit predicate or an implicit comparison via Objects#equal().
+		 * Note the possible combination of type guard and case expression.
+		 */
 		switch (o) {
 			case null: "null"
 			BigInteger case 57bi: "57"
